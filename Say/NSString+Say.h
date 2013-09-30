@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-#define say(string) [string say]
+#define say(fmt, ...) [NSString say:fmt, ##__VA_ARGS__]
 
 @interface NSString (Say)
+
++ (NSString *)say:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2);
 
 - (NSString *)say;
 

@@ -11,6 +11,18 @@
 
 @implementation NSString (Say)
 
++ (NSString *)say:(NSString *)format, ...
+{
+    va_list args;
+    va_start(args, format);
+    NSString *string = [[NSString alloc] initWithFormat:format arguments:args];
+    va_end(args);
+    
+    [string say];
+
+    return string;
+}
+
 - (NSString *)say
 {
     static AVSpeechSynthesizer *synthesizer = nil;

@@ -19,13 +19,13 @@
 {
     [super viewDidAppear:animated];
     
-    NSLog(@"%@", say(@"view did appear!"));
+    say(@"%s", __PRETTY_FUNCTION__);
 }
 
 - (IBAction)say:(id)sender
 {
     if (self.textField.text.length > 0) {
-        say(self.textField.text);
+        [self.textField.text say];
     }
 }
 
