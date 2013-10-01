@@ -19,7 +19,7 @@
 {
     [super viewDidAppear:animated];
     
-    say(@"%s", __PRETTY_FUNCTION__);
+    NSSay(@"%s", __PRETTY_FUNCTION__);
 }
 
 - (IBAction)say:(id)sender
