@@ -9,9 +9,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "NSString+Say.h"
 
-@implementation NSString (Say)
-
-+ (NSString *)say:(NSString *)format, ...
+void NSSay(NSString *format, ...)
 {
     va_list args;
     va_start(args, format);
@@ -19,9 +17,9 @@
     va_end(args);
     
     [string say];
-
-    return string;
 }
+
+@implementation NSString (Say)
 
 - (NSString *)say
 {
@@ -37,3 +35,4 @@
 }
 
 @end
+
